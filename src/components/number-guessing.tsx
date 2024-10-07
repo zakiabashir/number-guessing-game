@@ -156,7 +156,7 @@ export default function NumberGuessing(): JSX.Element {
               {/* Button to try the game again */}
               <Button
                 onClick={handleTryAgain}
-                className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded"
+                className="bg-gradient-to-br from-pink-900 to-blue-200 hover:bg-red-600 text-white font-bolder py-4 px-4 rounded"
               >
                 Play Again
               </Button>

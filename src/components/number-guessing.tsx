@@ -4,6 +4,8 @@
 import { useState, useEffect, ChangeEvent } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import Image from 'next/image'
+import bgImage from '../../public/gam2.jpg'; // Import the image at the top
 
 // Type definition for the NumberGuessingComponent's state
 interface NumberGuessingState {
@@ -75,9 +77,15 @@ export default function NumberGuessing(): JSX.Element {
 
   // JSX to render the game UI
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-gradient-to-br from-gray-800 to-white">
+    <div className="relative flex flex-col items-center justify-center h-screen  ">
+       <Image
+  src={bgImage}
+  layout="fill"
+  objectFit="cover"
+  alt="Background Image"
+/>
       {/* Main container for the game */}
-      <div className=" rounded-lg shadow-lg p-8 w-full max-w-md bg-gradient-to-br from-gray-600 to-white ">
+      <div className=" relative rounded-lg shadow-lg p-8 w-full max-w-md bg-gradient-to-br from-gray-800 to-blue-200 ">
         {/* Title of the game */}
         <h1 className="text-3xl font-bold text-center mb-2 text-white">
           Number Guessing Game
@@ -114,7 +122,7 @@ export default function NumberGuessing(): JSX.Element {
                 /* Button to pause the game */
                 <Button
                   onClick={handlePauseGame}
-                  className="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded"
+                  className="bg-gradient-to-br from-gray-800 to-blue-200 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded"
                 >
                   Pause
                 </Button>
@@ -127,13 +135,13 @@ export default function NumberGuessing(): JSX.Element {
                 type="number"
                 value={userGuess}
                 onChange={handleUserGuessChange}
-                className="bg-gray-100 border border-gray-300 rounded-lg py-2 px-4 w-full max-w-xs"
+                className="bg-gradient-to-br from-gray-200 to-blue-200 border border-gray-300 rounded-lg py-2 px-4 w-full max-w-xs"
                 placeholder="Enter your guess"
               />
               {/* Button to submit the guess */}
               <Button
                 onClick={handleGuess}
-                className="bg-gray-700 hover:bg-gray-800 text-white font-bold py-2 px-4 rounded ml-4"
+                className="bg-gradient-to-br from-gray-900 to-blue-200 hover:bg-gray-800 text-white font-bold py-2 px-4 rounded ml-4"
               >
                 Guess
               </Button>

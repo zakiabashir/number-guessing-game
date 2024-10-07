@@ -8,14 +8,6 @@ import Image from 'next/image'
 import bgImage from '../../public/gam2.jpg'; // Import the image at the top
 
 // Type definition for the NumberGuessingComponent's state
-interface NumberGuessingState {
-  gameStarted: boolean;
-  gameOver: boolean;
-  paused: boolean;
-  targetNumber: number;
-  userGuess: number | string;
-  attempts: number;
-}
 
 // Defining the NumberGuessingComponent function component
 export default function NumberGuessing(): JSX.Element {
@@ -30,7 +22,7 @@ export default function NumberGuessing(): JSX.Element {
   // useEffect to generate a new target number when the game starts or resumes
   useEffect(() => {
     if (gameStarted && !paused) {
-      const randomNumber: number = Math.floor(Math.random() * 10) + 1; // Generate a random number between 1 and 10
+      const randomNumber: number = Math.floor(Math.random() * 1) + 1; // Generate a random number between 1 and 10
       setTargetNumber(randomNumber); // Set the target number
     }
   }, [gameStarted, paused]); // Dependencies: gameStarted and paused
